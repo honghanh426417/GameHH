@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GameStore</title>
+    <link rel="stylesheet" href="~/css/HomePage.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">My Logo</a>
+        <div class="menuToggle">
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#">STORE</a>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Discovery Queue</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Points Shop</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Stats</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">COMMUNITY</a>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Discussions</a></li>
+                            <li><a href="#">Workshop</a></li>
+                            <li><a href="#">Market</a></li>
+                            <li><a href="#">Broadcasts</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SUPPORT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="loginbtn">
+            @*<a href="#">login</a> | <a href="#">legue</a>*@
+            @await Component.InvokeAsync("CartWidget")
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="gutter_header gutter_top">
+                <img class="home_page_gutter_top" src="https://store.cloudflare.steamstatic.com/public/images//gift/steamcards_promo_03.png?v=1" alt=""><br>
+                Steam Gift Cards
+            </div>
+            <li>
+                <b class="pad">RECOMMENDED</b>
+                <ul class="pad-item">
+                    <li><a href="#">By Friend</a></li>
+                    <li><a href="#">By Curators</a></li>
+                    <li><a href="#">Tags</a></li>
+                </ul>
+            </li>
+            <li>
+                <b class="pad">BROWSE CATEGORIES</b>
+                <ul class="pad-item">
+                    <li><a href="#">Top Sellers</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Upcoming</a></li>
+                    <li><a href="#">Specials</a></li>
+                    <li><a href="#">VR Titles</a></li>
+                    <li><a href="#">Controller-Friendly</a></li>
+                    <li><a href="#">Great on Deck</a></li>
+                </ul>
+            </li>
+            <li>
+                <b class="pad">HARDWARE</b>
+                <ul class="pad-item">
+                    <li><a href="#">Steam Deck</a></li>
+                    <li><a href="#">Steam Deck Dock</a></li>
+                    <li><a href="#">VR Hardware</a></li>
+                </ul>
+            </li>
+            <li>
+                <b class="pad">BROWSE BY GENRE</b>
+                <ul class="pad-item">
+                    <li><a href="#">Free to Play</a></li>
+                    <li><a href="#">Early Access</a></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Casual</a></li>
+                    <li><a href="#">Indie</a></li>
+                    <li><a href="#">Massively Multiplayer</a></li>
+                    <li><a href="#">Racing</a></li>
+                    <li><a href="#">RPG</a></li>
+                    <li><a href="#">Simulation</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Strategy</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="right-body">
+            <nav class="menu-small">
+                <ul>
+                    <div class="items">
+                    <li><a href="#">Your Store</a></li>
+                    <li><a href="#">New & Noteworthy</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Points Shop</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Labs</a></li>
+        </div>
+        <div class="search_area">
+            <div id="store_search">
+                <form id="searchform" name="searchform" method="get" action="#" onsubmit="return SearchSuggestCheckTerm(this);" role="search">
+                    <input type="hidden" name="snr" value="1_4_4__12">
+                    <div class="searchbox">
+                        <input id="store_nav_search_term" name="term" type="search" class="default" placeholder="search" size="22" autocomplete="off" maxlength="64">
+                        <a href="#" id="store_search_link" onclick="var $Form = $J(this).parents('form'); $Form.submit(); return false;" aria-label="Search Steam">
+                            <i class="fas fa-search" style="color: white;"></i>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        </ul>
+        </nav>
+        <div class="main-content">
+        @RenderBody()
+
+               
+        </div>
+
+        <div id="footer" class="small_footer">
+            <div class="footer_content">
+
+                <div class="rule"></div>
+                <div id="footer_logo_steam"><img src="https://store.cloudflare.steamstatic.com/public/images/v6/logo_steam_footer.png" alt="Valve Software" border="0"></div>
+
+                <div id="footer_logo"><a href="http://www.valvesoftware.com" target="_blank" rel=""><img src="https://store.cloudflare.steamstatic.com/public/images/footerLogo_valve_new.png" alt="Valve Software" border="0"></a></div>
+                <div id="footer_text" data-panel="{&quot;flow-children&quot;:&quot;row&quot;}">
+                    <div>© 2024 Valve Corporation.  All rights reserved.  All trademarks are property of their respective owners in the US and other countries.</div>
+                    <div>
+                        VAT included in all prices where applicable.&nbsp;&nbsp;
+
+                        <a href="#" target="_blank" rel="">Privacy Policy</a>
+                        &nbsp; | &nbsp;
+                        <a href="#" target="_blank" rel="">Legal</a>
+                        &nbsp; | &nbsp;
+                        <a href="#" target="_blank" rel="">Steam Subscriber Agreement</a>
+                        &nbsp; | &nbsp;
+                        <a href="#" target="_blank" rel="">Refunds</a>
+                        &nbsp; | &nbsp;
+                        <a href="#" target="_blank" rel="">Cookies</a>
+
+                    </div>
+                    <div class="responsive_optin_link">
+                        <div class="btn_medium btnv6_grey_black" onclick="Responsive_RequestMobileView()">
+                            <span>View mobile website</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div style="clear: left;"></div>
+                <br>
+
+                <div class="rule"></div>
+
+                <div class="valve_links" data-panel="{&quot;flow-children&quot;:&quot;row&quot;}">
+                    <a href="http://www.valvesoftware.com/about" target="_blank" rel="">About Valve</a>
+                    &nbsp; | &nbsp;<a href="#" target="_blank" rel="">Jobs</a>
+                    &nbsp; | &nbsp;<a href="#" target="_blank" rel="">Steamworks</a>
+                    &nbsp; | &nbsp;<a href="#" target="_blank" rel="">Steam Distribution</a>
+                    &nbsp; | &nbsp;<a href="#">Support</a>
+                    &nbsp; | &nbsp;<a href="#">Recycling</a>
+                    &nbsp; | &nbsp;<a href="#" target="_blank" rel="">Gift Cards</a>
+                    &nbsp; | &nbsp;<a href="#" target="_blank" rel=" noopener"><img src="https://store.cloudflare.steamstatic.com/public/images/ico/ico_facebook.png" alt="Facebook"> Steam</a>
+                    &nbsp; | &nbsp;<a href="#" target="_blank" rel=""><img src="https://store.cloudflare.steamstatic.com/public/images/ico/ico_twitter.png" alt="X"> steam</a>
+                </div>
+
+            </div>
+        </div>
+
+</body>
+</html>

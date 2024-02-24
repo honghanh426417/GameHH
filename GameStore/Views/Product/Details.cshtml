@@ -1,0 +1,24 @@
+@model GameStore.Models.Product
+
+@{
+    ViewData["Title"] = "Product Detail";
+}
+
+<style>
+    .addshopping-cart a {
+        font-family: Arial, sans-serif;
+        color: black;
+    }
+</style>
+
+<div class="product-detail">
+    <h2>@Model.Name</h2>
+    <img src="@Model.ImageGame" alt="@Model.Name">
+    <p>Price: $@Model.Price</p>
+    <p>Release Date: @Model.ReleaseDate.ToString("MMM dd, yyyy")</p>
+    <button class="addshopping-cart">
+        <a href="/Cart/AddToCart/?Id=@Model.Id"><i class="fa-solid fa-cart-shopping"></i> Add To cart</a>
+
+    </button>
+    <!-- Thêm các thông tin khác của sản phẩm tại đây -->
+</div>

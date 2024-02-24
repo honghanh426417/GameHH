@@ -1,0 +1,38 @@
+﻿<header>
+    <a href="#" class="logo">My Logo</a>
+    <div class="menuToggle">
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="#">STORE</a>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Discovery Queue</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Points Shop</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Stats</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMMUNITY</a>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Discussions</a></li>
+                        <li><a href="#">Workshop</a></li>
+                        <li><a href="#">Market</a></li>
+                        <li><a href="#">Broadcasts</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SUPPORT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="loginbtn">
+        @*<a href="#">login</a> | <a href="#">legue</a>*@
+        <a href=""><i class="fa-solid fa-user"></i></a>  |   @await Component.InvokeAsync("CartWidget")
+
+    </div>
+</header>
+@RenderBody()

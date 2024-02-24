@@ -1,0 +1,509 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: #0e161f;
+}
+
+header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  background: #15202c;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  margin-left: 50px;
+  color: #fff;
+  font-size: 1.75em;
+  font-weight: 600;
+  text-decoration: none;
+}
+header ul {
+  position: relative;
+  margin-right: 50px;
+}
+header ul li {
+  color: #dcdedf;
+  position: relative;
+  list-style: none;
+  float: left;
+}
+header ul li a {
+  color: #dcdedf;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 20px 15px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul li a:hover {
+  color: #fff;
+}
+
+header ul li ul {
+  position: absolute;
+  left: 0;
+  width: 150px;
+  background: #0e161f;
+  display: none;
+}
+header ul li:hover ul {
+  display: block;
+}
+header ul li ul li {
+  font-size: 10px;
+  position: relative;
+  width: 100%;
+}
+
+header ul li ul li:hover {
+  background: #dcdedf;
+}
+
+header ul li ul li a:hover {
+  color: black;
+}
+header .login {
+  color: #fff;
+  text-decoration: none;
+  font-size: small;
+}
+
+header .loginbtn {
+  color: gray;
+}
+header .loginbtn a {
+  color: gray;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+header .loginbtn a:hover {
+  color: white;
+}
+.container {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  column-gap: 20px;
+}
+.menu-small {
+  background: linear-gradient(to right, #3b6491, #346c9d, #152c75);
+  border: 1px solid #000;
+  border-left: none;
+  border-right: none;
+  margin-top: 30px;
+  height: 35px;
+}
+.gutter_header.gutter_top {
+  color: #88bde9;
+  margin: 15px 0 2px 0;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.items {
+  display: inline-flex;
+}
+.items li {
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  height: 33px;
+  color: #d9d9dd;
+}
+.items li:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(33, 162, 255, 0.25) 0%,
+    rgba(33, 162, 255, 0.15) 50%,
+    rgba(50, 50, 51, 0) 100%
+  );
+}
+.items li a {
+  font-weight: 500;
+  margin: 0 20px;
+  width: fit-content;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 34px;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.search_area {
+  padding-left: 40px;
+}
+
+.sidebar {
+     position: sticky;
+     top: 0;
+  margin-top: 50px;
+  height: 100%;
+  width: 250px;
+  left: 0;
+  z-index: 100;
+}
+.sidebar li {
+  color: #536f86;
+  list-style: none;
+}
+.pad-item {
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.sidebar li a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7a8b9a;
+}
+.sidebar a:hover {
+  color: #66c0e9;
+}
+
+.pad {
+  color: #536f86;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.wrapper {
+  margin-top: 15px;
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+
+.wrapper i {
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343f4f;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.wrapper i:hover {
+  background: #f2f2f2;
+}
+
+.wrapper i:first-child {
+  left: -22px;
+  display: none;
+}
+
+.wrapper i:last-child {
+  right: -22px;
+}
+.wrapper .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  z-index: -1;
+}
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+  pointer-events: none;
+}
+
+.carousel img {
+  height: 350px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 3.8);
+  border-radius: 2%;
+  box-shadow: 0px 0px 7px 0px #000;
+}
+
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+.title-sec {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 50px;
+  letter-spacing: 0.03em;
+  font-weight: normal;
+  padding-top: 2px;
+}
+
+.discount-title {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discount-title_left h2 {
+  margin: 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.discount-title_right a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #f1efef;
+  font-style: italic;
+}
+
+.discount-title_right a:hover {
+  color: #fff;
+}
+
+.list-card {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.game-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.card-img {
+  height: 200px;
+  border-radius: 3%;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3%;
+  object-fit: cover;
+}
+
+.discount-ptc {
+  color: #e44d26;
+  font-weight: bold;
+}
+
+.card-discount {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #fff;
+  font-size: 14px;
+}
+
+.new-price {
+  font-size: 16px;
+  color: #fff;
+}
+
+.card-tag {
+  background-color: #17232f;
+  margin-top: 10px;
+  border-radius: 8%;
+  display: flex;
+  float: left;
+  padding: 6px 8px;
+}
+
+.card-tag a {
+  text-decoration: none;
+  font-size: 11px;
+  color: #f1eeee;
+}
+
+.card-name {
+  color: #fff;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#footer.small_footer {
+    width: auto;
+  background: black;
+  position: relative;
+  top: auto;
+  bottom: auto;
+}
+
+.footer_content {
+  width: 940px;
+  margin: 20px auto;
+  padding-top: 16px;
+}
+
+#footer_logo_steam {
+  float: right;
+  padding-top: 2px;
+}
+
+img {
+  border: none;
+}
+
+#footer_logo {
+  float: left;
+  padding-top: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#footer_text {
+  float: left;
+  margin-left: 12px;
+  color: #8f98a0;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+#footer_text a {
+  color: #c6d4df;
+}
+
+.rule {
+  height: 8px;
+  border-top: 1px solid #363c44;
+}
+
+.valve_links {
+  margin-top: 8px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  color: #61686d;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.valve_links a {
+  color: #c6d4df;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  header .menu {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0;
+    background: #445964;
+    display: none;
+  }
+
+  header.active .menu {
+    display: initial;
+  }
+
+  header .menu ul li {
+    width: 100%;
+  }
+
+  header .menu ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+
+  header ul li ul li ul {
+    top: 0;
+    left: 0;
+  }
+
+  header .menu ul li:hover ul li {
+    background: #546e7b;
+  }
+
+  .loginbtn {
+    position: absolute;
+    display: none;
+  }
+
+  .menuToggle {
+    width: 40px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menuToggle::before {
+    content: "";
+    position: absolute;
+    width: 5%;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-12px);
+    box-shadow: 0 12px #fff;
+  }
+
+  .menuToggle::after {
+    content: "";
+    position: absolute;
+    width: 5%;
+    height: 3px;
+    background: #fff;
+    transform: translateY(12px);
+  }
+
+  header.active .menuToggle::before {
+    transform: rotate(45deg);
+    box-shadow: 0 0 #fff;
+  }
+
+  header.active .menuToggle::after {
+    transform: rotate(315deg);
+  }
+}

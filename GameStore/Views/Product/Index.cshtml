@@ -1,0 +1,283 @@
+@model List<GameStore.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/css/Product.css" asp-append-version="true" />
+
+<div class="main-content">
+    <div class="products-container">
+        @*<h1 class="game-categories_title">Action</h1>*@
+        <div class="container-content_products">
+            <section class="game-carousel_products">
+                <div class="section_header_products">
+                    <div class="section_header-title_products">
+                        <i class="fa-solid fa-fire"></i>
+                        <h3>ON TREND</h3>
+                    </div>
+                    <div class="view-more">
+                        <a href="#">View More</a>
+                    </div>
+                </div>
+                <div class="carousel-container_products">
+                    @foreach (var product in Model.Take(4))
+                    {
+                        <div class="carousel-item_products">
+                            <div class="carousel-img-item_products">
+                                <a href="/Views/Product" class="game-img-item_products">
+                                    <img src="@product.ImageGame" alt="@product.Name">
+                                </a>
+                                <div class="game-item_price">
+                                    <a href="#" class="game-item_cart">
+                                        <i class="fa-brands fa-windows"></i>
+                                    </a>
+                                    <span class="item-price">$@product.Price</span>
+                                </div>
+                            </div>
+                            <div class="carousel-item_info">
+                                <h2>@product.Name</h2>
+                                <div class="carousel-item_info-date">Release date: <span>@product.ReleaseDate.ToString("MMM dd, yyyy")</span></div>
+                                <div class="salepreview">
+                                    <div class="gamehover_ReviewScoreValue">
+                                        Mostly Positive <span>| @product.Review User Reviews</span>
+
+                                    </div>
+                                    <div class="sale-preview-widgets">
+                                        <div class="sale-preview-widgets_tags">
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Free to Play</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Vehicular Combat</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Combat</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">World War II</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">VR</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Flight</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Military</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Tanks</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Simulation</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Modern</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Massively Multiplayer</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Cold War</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Realistic</a>
+                                            <a href="#" target="_blank" class="salepreviewwidgets_Tagdetail" tabindex="0">Historical</a>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="whyRelevant">
+                                        <h4>
+                                            Why this game is relevant to you:
+                                        </h4>
+                                        <div class="discoveryqueuewizard">
+                                            <p>Ranked 11 in top sellers</p>
+                                            <p>Recommended based on the games you play</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </section>
+            <section class="bodyGame-products">
+                <div class="sale-tabs">
+                    <div class="list-tabs">
+                        <div class="tab-item">
+                            <a href="#">Featured</a>
+                        </div>
+                        <div class="tab-item">
+                            <a href="#">Adventure</a>
+                        </div>
+                        <div class="tab-item">
+                            <a href="#">Action</a>
+                        </div>
+                        <div class="tab-item">
+                            <a href="#">Platformer</a>
+                        </div>
+                        <div class="tab-item">
+                            <a href="#">Casual</a>
+                        </div>
+                        <div class="tab-item">
+                            <a href="#">Shooter</a>
+                        </div>
+                        <div class="tab-item">
+                            <a href="#">Fighting</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="popular-card_section">
+                    <div class="section_header_products">
+                        <div class="section_header-title_products">
+                            <h3>POPULAR TITLES</h3>
+                        </div>
+                        <div class="view-more">
+                            <a href="#">View More</a>
+                        </div>
+                    </div>
+
+                    <div class="popular-card_list">
+                        @foreach (var product in Model.Take(2))
+                        {
+                            <div class="popular-card">
+                                <div class="popular-card-img">
+                                    <img src="@product.ImageGame" alt="">
+                                </div>
+                                <div class="popular-card-price">
+                                    <a href="#" class="cart">
+                                        <i class="fa-brands fa-windows"></i>
+                                    </a>
+                                    <span class="price">$@product.Price</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+
+                </div>
+                <div class="recommended-section">
+                    <div class="section_header_products">
+                        <div class="section_header-title_products">
+                            <h3>FEATURED & RECOMMENDED</h3>
+                        </div>
+                        <div class="view-more">
+                            <a href="#">View More</a>
+                        </div>
+                    </div>
+
+                    <div class="list-card">
+                        @foreach (var product in Model.Take(4))
+                        {
+                            <div class="game-card">
+
+                                <div class="card-img">
+                                    <a href="@Url.Action("Details", "Product", new { id = product.Id })">
+                                        <img src="@product.ImageGame" alt="">
+                                    </a>
+                                </div>
+                                    <div class="card-tag">
+                                        <a href="#">BASIC GAME</a>
+                                    </div>
+                                    <div class="card-name">@product.Name</div>
+                                    <div class="card-discount">
+                                        <div class="discount-ptc">-30%</div>
+                                        <div class="old-price">@product.Price</div>
+                                        <div class="new-price">$@(product.Price - (product.Price * 30 / 100))</div>
+                                    </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+
+                <div class="product-adv">
+                    <img src="/public/ADV.jpeg" alt="">
+                </div>
+                <div class="coming-game">
+                    <div class="section_header_products">
+                        <div class="section_header-title_products">
+                            <h3>COMING SOON</h3>
+                        </div>
+                        <div class="view-more">
+                            <a href="#">View More</a>
+                        </div>
+                    </div>
+
+                    <div class="wrapper">
+                        <i id="left" class="fa-solid fa-angle-left"></i>
+                        <div class="carousel-coming">
+                            @foreach (var product in Model.Take(7))
+                            {
+                                <img src="@product.ImageGame" alt="@product.Name" draggable="false">
+                            }
+                        </div>
+
+                        <i id="right" class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="path/to/jquery.min.js"></script>
+<script src="path/to/bootstrap.bundle.min.js"></script>
+
+<script>const carousel = document.querySelector(".carousel-coming"),
+        firstImg = carousel.querySelectorAll("img")[0],
+        arrowIcons = document.querySelectorAll(".wrapper i");
+
+    let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+
+    const showHideIcons = () => {
+        // showing and hiding prev/next icon according to carousel scroll left value
+        let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+        arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+        arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+    }
+
+    arrowIcons.forEach(icon => {
+        icon.addEventListener("click", () => {
+            let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+            // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+            carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+            setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+        });
+    });
+
+    const autoSlide = () => {
+        // if there is no image left to scroll then return from here
+        if (carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+
+        positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+        let firstImgWidth = firstImg.clientWidth + 14;
+        // getting difference value that needs to add or reduce from carousel left to take middle img center
+        let valDifference = firstImgWidth - positionDiff;
+
+        if (carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+            return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+        }
+        // if user is scrolling to the left
+        carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+
+    const dragStart = (e) => {
+        // updatating global variables value on mouse down event
+        isDragStart = true;
+        prevPageX = e.pageX || e.touches[0].pageX;
+        prevScrollLeft = carousel.scrollLeft;
+    }
+
+    const dragging = (e) => {
+        // scrolling images/carousel to left according to mouse pointer
+        if (!isDragStart) return;
+        e.preventDefault();
+        isDragging = true;
+        carousel.classList.add("dragging");
+        positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+        carousel.scrollLeft = prevScrollLeft - positionDiff;
+        showHideIcons();
+    }
+
+    const dragStop = () => {
+        isDragStart = false;
+        carousel.classList.remove("dragging");
+
+        if (!isDragging) return;
+        isDragging = false;
+        autoSlide();
+    }
+
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("touchstart", dragStart);
+
+    document.addEventListener("mousemove", dragging);
+    carousel.addEventListener("touchmove", dragging);
+
+    document.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("touchend", dragStop);</script>
+
